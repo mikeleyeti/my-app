@@ -1,11 +1,10 @@
 import { plantList } from "../datas/plantList";
-import "../styles/ShoppingList.css"
-import CareScale from "./Carescale";
+import "../styles/ShoppingList.css";
+import PlantItem from "./PlantItem";
 
 function ShoppingList() {
-  const categories = ["test1", "test2", "test3", "test1"];
-
   // Méthode 1 "bourin"
+  //   const categories = ["test1", "test2", "test3", "test1"];
   //   const cat_uniques = [];
   //   for (let index = 0; index < categories.length; index++) {
   //       const element = categories[index];
@@ -30,21 +29,22 @@ function ShoppingList() {
   return (
     <div>
       {/* Catégories */}
-      <ul >
+      <ul>
         {cat_uniques.map((cat) => (
           <li key={cat}>{cat}</li>
         ))}
       </ul>
       {/* Plantes */}
       <ul className='lmj-plant-list'>
-        {plantList.map((plant) => (
-            <li key={plant.id} className='lmj-plant-item'>
-						{plant.name}
-						{plant.isSpecialOffer && <div className='lmj-sales'>Soldes</div>}
-                        <CareScale careType='water' scaleValue={plant.water} />
-                        <CareScale careType='light' scaleValue={plant.light} />
-					</li>
-        ))}
+      {plantList.map(({ id, cover, name, water, light }) => (
+        <PlantItem
+          id={id}
+          cover={cover}
+          name={name}
+          water={water}
+          light={light}
+        />
+      ))}
       </ul>
     </div>
   );
