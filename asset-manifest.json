@@ -1,14 +1,16 @@
 {
   "files": {
-    "main.css": "/my-app/static/css/main.07e61f28.css",
-    "main.js": "/my-app/static/js/main.0ed7cbe6.js",
+    "main.css": "/my-app/static/css/main.a46d33a9.css",
+    "main.js": "/my-app/static/js/main.9326e78a.js",
     "static/media/monstera.jpg": "/my-app/static/media/monstera.6257bc6b1e699fa6dde1.jpg",
+    "static/media/sun.svg": "/my-app/static/media/sun.a9d8a86f10fef70221208cd8a47672e8.svg",
+    "static/media/water.svg": "/my-app/static/media/water.2f302cf404e0543baa33e354dd2598d2.svg",
     "index.html": "/my-app/index.html",
-    "main.07e61f28.css.map": "/my-app/static/css/main.07e61f28.css.map",
-    "main.0ed7cbe6.js.map": "/my-app/static/js/main.0ed7cbe6.js.map"
+    "main.a46d33a9.css.map": "/my-app/static/css/main.a46d33a9.css.map",
+    "main.9326e78a.js.map": "/my-app/static/js/main.9326e78a.js.map"
   },
   "entrypoints": [
-    "static/css/main.07e61f28.css",
-    "static/js/main.0ed7cbe6.js"
+    "static/css/main.a46d33a9.css",
+    "static/js/main.9326e78a.js"
   ]
 }
