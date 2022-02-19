@@ -19,12 +19,8 @@ import PlantItem from "./PlantItem";
   //       []
   //   )
 
-  function ShoppingList({ cart, updateCart }) {
-    const categories = plantList.reduce(
-      (acc, plant) =>
-        acc.includes(plant.category) ? acc : acc.concat(plant.category),
-      []
-    )
+  function ShoppingList({ cart, updateCart , activeCategorie }) {
+    
   
     function addToCart(name, price) {
       const currentPlantSaved = cart.find((plant) => plant.name === name)
@@ -41,15 +37,11 @@ import PlantItem from "./PlantItem";
       }
     }
   
-    return (
-      <div className='lmj-shopping-list'>
-        <ul>
-          {categories.map((cat) => (
-            <li key={cat}>{cat}</li>
-          ))}
-        </ul>
+    return (      
+      <div className='lmj-shopping-list'>        
         <ul className='lmj-plant-list'>
-          {plantList.map(({ id, cover, name, water, light, price }) => (
+          {plantList.filter( (plant) => (activeCategorie ? plant.category === activeCategorie : true ))
+          .map(({ id, cover, name, water, light, price }) => (
             <div key={id}>
               <PlantItem
                 cover={cover}
