@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Banner from './Banner'
 import logo from '../assets/logo.png'
 import Cart from './Cart'
@@ -8,8 +8,15 @@ import '../styles/Layout.css'
 import Categories from './Categories'
 
 function App() {
-	const [cart, updateCart] = useState([])
+	const savedCart = localStorage.getItem('cart')
+	const [cart, updateCart] = useState(savedCart ? JSON.parse(localStorage.getItem('cart')) : [])
 	const [activeCategorie, updateActiveCategorie] = useState('')
+	
+	useEffect( () => (
+		localStorage.setItem('cart',JSON.stringify(cart)  )
+	), [cart]
+	)
+	
 	return (
 		<div>
 			<Banner>
